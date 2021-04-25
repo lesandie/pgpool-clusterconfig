@@ -1,0 +1,553 @@
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx --port=9999 -U postgres postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 48.973 ms
+tps = 20.419535 (including connections establishing)
+tps = 21.473963 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx.xx -p 9999 -U postgres -c 2 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 2
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 20/20
+latency average = 63.695 ms
+tps = 31.399673 (including connections establishing)
+tps = 32.650744 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx.xx -p 9999 -U postgres -b select-only  postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 7.365 ms
+tps = 135.774361 (including connections establishing)
+tps = 221.127743 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx.xs -p 9999 -U postgres -j 1 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 38.666 ms
+tps = 25.862412 (including connections establishing)
+tps = 27.481845 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -L 10 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+number of transactions above the 10.0 ms latency limit: 10/10 (100.000 %)
+latency average = 30.194 ms
+latency stddev = 6.074 ms
+tps = 30.129328 (including connections establishing)
+tps = 33.112350 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -M extended postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: extended
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 66.908 ms
+tps = 14.945840 (including connections establishing)
+tps = 15.695055 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -n postgres 
+Password: 
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 58.442 ms
+tps = 17.111005 (including connections establishing)
+tps = 18.017998 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -P 60 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 75.430 ms
+latency stddev = 53.666 ms
+tps = 12.851366 (including connections establishing)
+tps = 13.256278 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -R 60 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 287.058 ms
+latency stddev = 189.313 ms
+rate limit schedule lag: avg 214.038 (max 521.335) ms
+tps = 13.224271 (including connections establishing)
+tps = 13.691857 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -s 1 postgres 
+Password: 
+scale option ignored, using count from pgbench_branches table (1)
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 79.993 ms
+tps = 12.501042 (including connections establishing)
+tps = 12.983633 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -S postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 26.224 ms
+tps = 38.132373 (including connections establishing)
+tps = 276.363465 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -t 30 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 30
+number of transactions actually processed: 30/30
+latency average = 93.065 ms
+tps = 10.745211 (including connections establishing)
+tps = 10.861169 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -T 30 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+duration: 30 s
+number of transactions actually processed: 421
+latency average = 71.310 ms
+tps = 14.023307 (including connections establishing)
+tps = 14.035722 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -v postgres 
+Password: 
+starting vacuum...end.
+starting vacuum pgbench_accounts...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 10
+number of transactions actually processed: 10/10
+latency average = 57.966 ms
+tps = 17.251415 (including connections establishing)
+tps = 18.617404 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 10 -j 2 -S -t 30 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: simple
+number of clients: 10
+number of threads: 2
+number of transactions per client: 30
+number of transactions actually processed: 300/300
+latency average = 12.612 ms
+tps = 792.892855 (including connections establishing)
+tps = 850.316353 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 10 -j 2 -S -T 30 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: simple
+number of clients: 10
+number of threads: 2
+duration: 30 s
+number of transactions actually processed: 58356
+latency average = 5.142 ms
+tps = 1944.718817 (including connections establishing)
+tps = 1946.271641 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 10 -j 2 -t 30 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 10
+number of threads: 2
+number of transactions per client: 30
+number of transactions actually processed: 300/300
+latency average = 523.666 ms
+tps = 19.096150 (including connections establishing)
+tps = 19.155491 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 10 -j 2 -T 30 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 10
+number of threads: 2
+duration: 30 s
+number of transactions actually processed: 505
+latency average = 612.336 ms
+tps = 16.330900 (including connections establishing)
+tps = 16.371197 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 10 -t 1000 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 10
+number of threads: 1
+number of transactions per client: 1000
+number of transactions actually processed: 10000/10000
+latency average = 344.855 ms
+tps = 28.997655 (including connections establishing)
+tps = 28.999607 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 100 -T 60 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 100
+number of threads: 1
+duration: 60 s
+number of transactions actually processed: 1305
+latency average = 4854.686 ms
+tps = 20.598654 (including connections establishing)
+tps = 20.614338 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 10 -j 2 -t 1000 -N postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: simple update>
+scaling factor: 1
+query mode: simple
+number of clients: 10
+number of threads: 2
+number of transactions per client: 1000
+number of transactions actually processed: 10000/10000
+latency average = 75.234 ms
+tps = 132.919229 (including connections establishing)
+tps = 132.963183 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 5 -j 2 -t 1000 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 5
+number of threads: 2
+number of transactions per client: 1000
+number of transactions actually processed: 5000/5000
+latency average = 198.628 ms
+tps = 25.172656 (including connections establishing)
+tps = 25.176262 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 5 -j 2 -t 1000 postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 5
+number of threads: 2
+number of transactions per client: 1000
+number of transactions actually processed: 5000/5000
+latency average = 198.628 ms
+tps = 25.172656 (including connections establishing)
+tps = 25.176262 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 100 -j 2 -T 60 -N postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: simple update>
+scaling factor: 1
+query mode: simple
+number of clients: 100
+number of threads: 2
+duration: 60 s
+number of transactions actually processed: 29328
+latency average = 205.574 ms
+tps = 486.443907 (including connections establishing)
+tps = 486.683780 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 10 -j 2 -t 1000 -M extended -S postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: extended
+number of clients: 10
+number of threads: 2
+number of transactions per client: 1000
+number of transactions actually processed: 10000/10000
+latency average = 8.544 ms
+tps = 1170.448922 (including connections establishing)
+tps = 1174.330562 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -p 9999 -U postgres -c 10 -j 2 -T 60 -M extended -S postgres 
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: extended
+number of clients: 10
+number of threads: 2
+duration: 60 s
+number of transactions actually processed: 74171
+latency average = 8.090 ms
+tps = 1236.103993 (including connections establishing)
+tps = 1236.613514 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 100 -j 2 -T 30 -N postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: simple update>
+scaling factor: 1
+query mode: simple
+number of clients: 100
+number of threads: 2
+duration: 30 s
+number of transactions actually processed: 19951
+latency average = 151.932 ms
+tps = 658.189596 (including connections establishing)
+tps = 658.577052 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 100 -j 2 -t 1000 -N postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: simple update>
+scaling factor: 1
+query mode: simple
+number of clients: 100
+number of threads: 2
+number of transactions per client: 1000
+number of transactions actually processed: 100000/100000
+latency average = 124.528 ms
+tps = 803.032027 (including connections establishing)
+tps = 803.113407 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 100 -j 3 -t 10000 -S postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: simple
+number of clients: 100
+number of threads: 3
+number of transactions per client: 10000
+number of transactions actually processed: 1000000/1000000
+latency average = 12.943 ms
+tps = 7726.162305 (including connections establishing)
+tps = 7727.025174 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150 -j 3 -t 120 -S postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 3
+number of transactions per client: 120
+number of transactions actually processed: 18000/18000
+latency average = 30.393 ms
+tps = 4935.389043 (including connections establishing)
+tps = 4961.442792 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150 -j 3 -T 120 -S postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 3
+duration: 120 s
+number of transactions actually processed: 909821
+latency average = 19.830 ms
+tps = 7564.397895 (including connections establishing)
+tps = 7565.251961 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150 -j 2 -T 120 -S postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 2
+duration: 120 s
+number of transactions actually processed: 915210
+latency average = 19.703 ms
+tps = 7612.996976 (including connections establishing)
+tps = 7613.975776 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150  -T 120 -S postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 1
+duration: 120 s
+number of transactions actually processed: 857640
+latency average = 21.037 ms
+tps = 7130.392816 (including connections establishing)
+tps = 7131.448806 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150  -T 120 -N postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: simple update>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 1
+duration: 120 s
+number of transactions actually processed: 115664
+latency average = 156.281 ms
+tps = 959.810932 (including connections establishing)
+tps = 959.919578 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150 -j 2 -T 120 -N postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: simple update>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 2
+duration: 120 s
+number of transactions actually processed: 97928
+latency average = 184.518 ms
+tps = 812.928060 (including connections establishing)
+tps = 813.011943 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150 -j 3 -T 120 -N postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: simple update>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 3
+duration: 120 s
+number of transactions actually processed: 96873
+latency average = 186.096 ms
+tps = 806.037666 (including connections establishing)
+tps = 806.141916 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150 -j 3 -T 120 postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 3
+duration: 120 s
+number of transactions actually processed: 3001
+latency average = 6157.071 ms
+tps = 24.362234 (including connections establishing)
+tps = 24.364965 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150 -j 2 -T 120 postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 2
+duration: 120 s
+number of transactions actually processed: 2981
+latency average = 6164.764 ms
+tps = 24.331832 (including connections establishing)
+tps = 24.334692 (excluding connections establishing)
+
+baloo@jungle:~$ pgbench -h xx.xx.xx.xx -U postgres -c 150 -T 120 postgres
+Password: 
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 150
+number of threads: 1
+duration: 120 s
+number of transactions actually processed: 2815
+latency average = 6825.177 ms
+tps = 21.977452 (including connections establishing)
+tps = 21.979263 (excluding connections establishing)
+

@@ -1,17 +1,23 @@
 
-# PostgreSQL 11 multimaster and PgPool-II cluster config
+# PostgreSQL 11 master/slave and PgPool-II cluster config
 
-# Indice
+# Index
 
-1. [Node installation](#nodeinstall)
-2. [Node configuration](#nodeconfig)
-3. [Pgpool-II installation](#pgpoolinstall)
-4. [Pgpool-II config](#pgpoolconfig)
-5. [PostgreSQL tips](#tipspostgres)
-6. [PostreSQL extensions](#extensions)
-7. [Info and resources](#bib)
+1. [Rationale](#rationale)
+2. [Node installation](#nodeinstall)
+3. [Node configuration](#nodeconfig)
+4. [Pgpool-II installation](#pgpoolinstall)
+5. [Pgpool-II config](#pgpoolconfig)
+6. [PostgreSQL tips](#tipspostgres)
+7. [PostreSQL extensions](#extensions)
+8. [Info and resources](#bib)
 
-## Node installation
+## Rationale
+
+This is a showcase of how to apply a cluster configuration to a minimun set of 3 nodes in streaming replication mode. In another [repo](https://github.com/lesandie/pgpool-failover) I wrote a python script to help with the failover. This is based on different information resources and may have outdated and/or incomplete info. But it provides a starting point guide to configure a basic cluster in PostgreSQL.
+
+
+## Node instalation
 
 **PostgreSQL node installation in Ubuntu 18.04:**
 

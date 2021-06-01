@@ -1,5 +1,5 @@
 
-# PostgreSQL 11 master/slave and PgPool-II cluster config
+# PostgreSQL 11 multinode with PgPool-II cluster config
 
 # Index
 
@@ -14,8 +14,8 @@
 
 ## Rationale
 
-This is a showcase of how to apply a cluster configuration to a minimun set of 3 nodes in streaming replication mode. In another [repo](https://github.com/lesandie/pgpool-failover) I wrote a python script to help with the failover. This is based on different information resources and may have outdated and/or incomplete info. But it provides a starting point guide to configure a basic cluster in PostgreSQL.
-
+This is a showcase of how to apply a cluster configuration to a minimun set of 3 nodes in **streaming replication mode**. In another [repo](https://github.com/lesandie/pgpool-failover) I wrote a python script to help with the failover. In the backup and etl directories are located some scripts and functions as showcase.
+This is based on different information resources and may have outdated and/or incomplete info. But it provides a starting point guide to configure a basic cluster in PostgreSQL. Pgpool is the logical balancer distributing read operations between the slave nodes and assigning the write operations to the master node. This type of Read/Write split favors a more resilient cluster while maintaining consistency.
 
 ## Node instalation
 
